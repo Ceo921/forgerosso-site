@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ForgeRosso — Trucking authority, engineered like a supercar.</title>
+<meta name="description" content="From driveway to interstate in 24 hours. White-glove DOT filing, freight access, and compliance — built for owner-operators who refuse to be ordinary." />
+<meta property="og:title" content="ForgeRosso — Trucking authority, engineered like a supercar." />
+<meta property="og:description" content="From driveway to interstate in 24 hours. White-glove DOT filing, freight access, and compliance — for owner-operators who refuse to be ordinary." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://forgerosso.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ForgeRosso — Trucking authority, engineered like a supercar." />
+<meta name="twitter:description" content="From driveway to interstate in 24 hours." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23050505'/%3E%3Ctext x='50' y='72' font-family='Arial Black, sans-serif' font-size='80' font-weight='900' fill='%23D40000' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=Big+Shoulders+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050505;
+    --bg-2: #0c0c0c;
+    --card: #111111;
+    --line: #1d1d1d;
+    --rosso: #D40000;
+    --rosso-bright: #FF1A1A;
+    --gold: #C9A961;
+    --cream: #F5F1E8;
+    --muted: #8a8a8a;
+    --max: 1240px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+  /* ─────── NAV ─────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 32px;
+    backdrop-filter: blur(14px);
+    background: rgba(5,5,5,0.55);
+    border-bottom: 1px solid transparent;
+    transition: background .4s, border-color .4s, padding .3s;
+  }
+  nav.scrolled {
+    padding: 14px 32px;
+    background: rgba(5,5,5,0.92);
+    border-bottom-color: var(--line);
+  }
+  nav .row {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: 4px;
+  }
+  .brand .ross { color: var(--rosso-bright); }
+  .nav-links {
+    display: flex; gap: 36px;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 1.2px; text-transform: uppercase;
+  }
+  .nav-links a { color: #cfcfcf; transition: color .2s; }
+  .nav-links a:hover { color: var(--cream); }
+  .pill {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 22px;
+    background: var(--rosso);
+    color: #fff;
+    font-weight: 600; font-size: 13px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform .2s, box-shadow .2s, background .2s;
+    box-shadow: 0 8px 30px rgba(212,0,0,0.35);
+  }
+  .pill:hover { background: var(--rosso-bright); transform: translateY(-1px); box-shadow: 0 12px 40px rgba(255,26,26,0.5); }
+  .pill.ghost { background: transparent; color: var(--cream); border: 1px solid var(--line); box-shadow: none; }
+  .pill.ghost:hover { border-color: var(--cream); background: rgba(255,255,255,0.04); }
+
+  @media (max-width: 800px) { .nav-links { display: none; } }
+
+  /* ─────── HERO ─────── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 140px 0 80px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 70% 60% at 80% 30%, rgba(212,0,0,0.22), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 10% 90%, rgba(201,169,97,0.08), transparent 60%),
+      linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    pointer-events: none;
+  }
+  .hero .container { position: relative; z-index: 2; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700; font-size: 13px;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 36px;
+  }
+  .eyebrow::before {
+    content: ''; width: 36px; height: 1px; background: var(--gold);
+  }
+  h1.headline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: clamp(48px, 8.5vw, 124px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    max-width: 1100px;
+  }
+  h1.headline .accent { color: var(--rosso-bright); }
+  .sub {
+    margin-top: 36px;
+    max-width: 620px;
+    font-size: 19px;
+    color: #c9c9c9;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .cta-row {
+    margin-top: 48px;
+    display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  .trust {
+    margin-top: 64px;
+    display: flex; align-items: center; gap: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .stars { color: var(--gold); letter-spacing: 2px; font-size: 18px; }
+
+  /* ─────── PERFORMANCE STRIP ─────── */
+  .perf {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 60px 0;
+  }
+  .perf-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat { padding: 12px 24px; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat .num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--cream);
+    letter-spacing: -1px;
+  }
+  .stat .num .unit { color: var(--rosso-bright); }
+  .stat .lbl {
+    margin-top: 12px;
+    font-size: 12px;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    .perf-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: none; border-bottom: 1px solid var(--line); padding: 24px; }
+    .stat:nth-child(odd) { border-right: 1px solid var(--line); }
+    .stat:nth-last-child(-n+2) { border-bottom: 0; }
+    .stat .num { font-size: 48px; }
+  }
+
+  /* ─────── SECTIONS ─────── */
+  section.block { padding: 140px 0; }
+  .section-label {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--rosso-bright);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    max-width: 900px;
+  }
+  h2 .accent { color: var(--rosso-bright); }
+  .lede {
+    margin-top: 22px;
+    max-width: 640px;
+    font-size: 17px;
+    color: #b8b8b8;
+    font-weight: 300;
+  }
+
+  /* ─────── PROCESS ─────── */
+  .process-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .step {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 48px 36px 40px;
+    transition: border-color .3s, transform .3s;
+  }
+  .step:hover { border-color: var(--rosso); transform: translateY(-4px); }
+  .step .n {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.85;
+  }
+  .step h3 {
+    margin-top: 24px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+  .step p {
+    margin-top: 14px;
+    color: #b0b0b0;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  @media (max-width: 820px) { .process-grid { grid-template-columns: 1fr; } }
+
+  /* ─────── CONFIGURATOR ─────── */
+  .configurator {
+    background: linear-gradient(180deg, #0a0a0a, #050505);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .config-wrap {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  @media (max-width: 980px) { .config-wrap { grid-template-columns: 1fr; gap: 40px; } }
+
+  .controls .field {
+    margin-bottom: 32px;
+  }
+  .controls label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .controls label .v {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--cream);
+    letter-spacing: 1px;
+  }
+  .controls input[type=range] {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 2px;
+    background: var(--line);
+    outline: none;
+  }
+  .controls input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; height: 20px;
+    background: var(--rosso);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(212,0,0,0.6);
+  }
+  .veh-select { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .veh {
+    padding: 14px 10px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    color: var(--cream);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .2s;
+    text-align: center;
+  }
+  .veh:hover { border-color: #555; }
+  .veh.active { background: var(--rosso); border-color: var(--rosso); color: #fff; box-shadow: 0 6px 24px rgba(212,0,0,0.4); }
+
+  .gauge {
+    aspect-ratio: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    background:
+      radial-gradient(circle at center, #0a0a0a 50%, #050505 70%, #000 100%);
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    position: relative;
+    box-shadow: inset 0 0 80px rgba(212,0,0,0.15), 0 30px 80px rgba(0,0,0,0.6);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+  }
+  .gauge::before {
+    content: ''; position: absolute; inset: 18px;
+    border-radius: 50%; border: 1px solid var(--line);
+  }
+  .gauge .label-top {
+    position: absolute; top: 18%;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .gauge .val {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1;
+    color: var(--cream);
+    letter-spacing: -1px;
+  }
+  .gauge .val .pre { color: var(--rosso-bright); margin-right: 4px; }
+  .gauge .sub-val {
+    margin-top: 10px;
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .gauge .needle {
+    position: absolute;
+    left: 50%; bottom: 50%;
+    width: 2px; height: 38%;
+    background: linear-gradient(to top, var(--rosso-bright), transparent);
+    transform-origin: bottom center;
+    transition: transform .6s cubic-bezier(.2,1.6,.4,1);
+    box-shadow: 0 0 12px var(--rosso-bright);
+  }
+
+  /* ─────── LINEUP / PRICING ─────── */
+  .lineup-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .model {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 48px 36px 40px;
+    transition: transform .3s, border-color .3s;
+  }
+  .model:hover { transform: translateY(-6px); border-color: #2a2a2a; }
+  .model.flagship {
+    border: 1px solid var(--rosso);
+    background: linear-gradient(180deg, rgba(212,0,0,0.06), var(--card) 40%);
+    box-shadow: 0 30px 80px rgba(212,0,0,0.15);
+  }
+  .model.flagship::after {
+    content: 'FLAGSHIP';
+    position: absolute; top: 24px; right: 24px;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 10px; letter-spacing: 2px;
+    color: var(--rosso-bright);
+    background: rgba(212,0,0,0.12);
+    padding: 6px 10px;
+    border: 1px solid var(--rosso);
+  }
+  .model .name {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900; font-size: 13px;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .model .title {
+    margin-top: 12px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.05;
+  }
+  .model .price {
+    margin-top: 28px;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .model .price .currency { color: var(--rosso-bright); font-size: 28px; vertical-align: top; margin-right: 4px; }
+  .model .price-sub { font-size: 12px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 8px; }
+  .model ul {
+    list-style: none;
+    margin: 32px 0 36px;
+    border-top: 1px solid var(--line);
+  }
+  .model ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    color: #ccc;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .model ul li::before {
+    content: '—'; color: var(--rosso-bright); font-weight: 700;
+  }
+  .model .pill { width: 100%; justify-content: center; }
+  @media (max-width: 980px) { .lineup-grid { grid-template-columns: 1fr; } }
+
+  /* ─────── DRIVERS / TESTIMONIALS ─────── */
+  .drivers-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .driver {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 40px 32px;
+  }
+  .driver .mark {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 0.6;
+    color: var(--rosso);
+    margin-bottom: 16px;
+  }
+  .driver p.q {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--cream);
+  }
+  .driver .byline {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .driver .byline .name { color: var(--cream); font-weight: 600; }
+  @media (max-width: 980px) { .drivers-grid { grid-template-columns: 1fr; } }
+
+  /* ─────── FINAL CTA ─────── */
+  .final {
+    padding: 100px 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212,0,0,0.35), transparent 65%),
+      #050505;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  .final h2 {
+    margin: 0 auto;
+    font-size: clamp(40px, 6vw, 88px);
+  }
+  .final .cta-row { justify-content: center; }
+
+  /* ─────── FOOTER ─────── */
+  footer {
+    padding: 60px 0 40px;
+    background: #030303;
+    border-top: 1px solid var(--line);
+  }
+  .foot-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  .foot-col h4 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .foot-col a {
+    display: block;
+    font-size: 14px;
+    color: #999;
+    padding: 6px 0;
+    transition: color .2s;
+  }
+  .foot-col a:hover { color: var(--cream); }
+  .foot-brand { font-size: 14px; color: #777; line-height: 1.6; max-width: 280px; margin-top: 14px; font-weight: 300; }
+  .foot-bottom {
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  @media (max-width: 820px) { .foot-row { grid-template-columns: 1fr 1fr; } }
+
+  /* ─────── LEAD FORM ─────── */
+  .reserve {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .lead-form { margin-top: 56px; max-width: 820px; }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 24px;
+  }
+  @media (max-width: 720px) { .form-grid { grid-template-columns: 1fr; } }
+  .lead-form label { display: flex; flex-direction: column; gap: 10px; }
+  .lead-form label span {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted); font-weight: 700;
+  }
+  .lead-form input,
+  .lead-form select {
+    background: #050505;
+    border: 1px solid var(--line);
+    color: var(--cream);
+    padding: 16px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    border-radius: 0;
+  }
+  .lead-form input:focus,
+  .lead-form select:focus {
+    border-color: var(--rosso);
+    box-shadow: 0 0 0 3px rgba(212,0,0,0.15);
+  }
+  .lead-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%),
+                       linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+    background-position: calc(100% - 22px) 22px, calc(100% - 16px) 22px;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 40px;
+  }
+  .lead-form .submit-row {
+    margin-top: 40px;
+    display: flex; gap: 16px; align-items: center;
+  }
+  .lead-form button.pill {
+    flex: 1;
+    justify-content: center;
+    font-size: 14px;
+    padding: 20px 32px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .lead-form .legal {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 22px;
+    text-transform: uppercase;
+  }
+  .honeypot { display: none !important; }
+
+  /* ─────── REVEAL ─────── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="row">
+    <div class="brand">FORGE<span class="ross">ROSSO</span></div>
+    <div class="nav-links">
+      <a href="#process">The Process</a>
+      <a href="#configure">Configure</a>
+      <a href="#lineup">The Lineup</a>
+      <a href="#drivers">Drivers</a>
+    </div>
+    <a href="#reserve" class="pill">Start Engine</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">EST. 2026 · LOS ANGELES · 50 STATES</div>
+    <h1 class="headline">From driveway<br/>to interstate.<br/><span class="accent">In 24 hours.</span></h1>
+    <p class="sub">A concierge filing service for owner-operators who refuse to be ordinary. DOT, MC, BOC-3, UCR, IFTA — engineered, filed, and road-ready while you sleep.</p>
+    <div class="cta-row">
+      <a href="#lineup" class="pill">Configure Your Authority &nbsp;→</a>
+      <a href="#configure" class="pill ghost">See What You'll Earn</a>
+    </div>
+    <div class="trust">
+      <span class="stars">★★★★★</span>
+      <span>4.9 / 5 · 800+ owner-operators on the road</span>
+    </div>
+  </div>
+</header>
+
+<!-- PERFORMANCE -->
+<section class="perf">
+  <div class="container">
+    <div class="perf-grid">
+      <div class="stat">
+        <div class="num">24<span class="unit">h</span></div>
+        <div class="lbl">USDOT issued</div>
+      </div>
+      <div class="stat">
+        <div class="num">10<span class="unit">min</span></div>
+        <div class="lbl">Guided filing</div>
+      </div>
+      <div class="stat">
+        <div class="num">$117<span class="unit">.</span></div>
+        <div class="lbl">Entry price</div>
+      </div>
+      <div class="stat">
+        <div class="num">4.9<span class="unit">★</span></div>
+        <div class="lbl">Google rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="block" id="process">
+  <div class="container">
+    <div class="section-label reveal">The Process</div>
+    <h2 class="reveal">Three laps. <span class="accent">Then you're on the freeway.</span></h2>
+    <p class="lede reveal">Most filing services hand you a PDF and call it done. ForgeRosso runs your entire startup — from formation to first load — like a Formula pit crew.</p>
+
+    <div class="process-grid">
+      <div class="step reveal">
+        <div class="n">01</div>
+        <h3>The Inspection</h3>
+        <p>Tell us your truck, your state, your goals. We map your federal + state filings in under ten minutes. No paperwork. No guessing.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">02</div>
+        <h3>The Engineering</h3>
+        <p>Our compliance engineers file your LLC, USDOT, MC, BOC-3, and UCR — error-checked, expedited, and tracked in your dashboard.</p>
+      </div>
+      <div class="step reveal">
+        <div class="n">03</div>
+        <h3>The Launch</h3>
+        <p>Your broker packet, insurance referrals, and freight access go live the moment your authority clears. You hit the gas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIGURATOR -->
+<section class="block configurator" id="configure">
+  <div class="container">
+    <div class="section-label reveal">The Configurator</div>
+    <h2 class="reveal">Spec your machine. <span class="accent">See your annual.</span></h2>
+    <p class="lede reveal">Real numbers. Real rates. Drag the dials to project what your authority earns in its first twelve months on the road.</p>
+
+    <div class="config-wrap">
+      <div class="controls reveal">
+        <div class="field">
+          <label>Vehicle Class <span class="v" id="vehLbl">Class 8 Sleeper</span></label>
+          <div class="veh-select" id="vehSelect">
+            <div class="veh" data-mult="0.7">Box Truck</div>
+            <div class="veh active" data-mult="1.0">Class 8</div>
+            <div class="veh" data-mult="1.4">Reefer</div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Rate per Mile <span class="v" id="rateLbl">$2.40</span></label>
+          <input type="range" id="rate" min="1.5" max="4.5" step="0.1" value="2.4" />
+        </div>
+        <div class="field">
+          <label>Miles per Week <span class="v" id="milesLbl">2,500</span></label>
+          <input type="range" id="miles" min="1000" max="3500" step="100" value="2500" />
+        </div>
+      </div>
+
+      <div class="gauge reveal">
+        <div class="label-top">PROJECTED ANNUAL</div>
+        <div class="needle" id="needle"></div>
+        <div class="val"><span class="pre">$</span><span id="annual">312,000</span></div>
+        <div class="sub-val">GROSS · 50-WEEK YEAR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINEUP -->
+<section class="block" id="lineup">
+  <div class="container">
+    <div class="section-label reveal">The Lineup</div>
+    <h2 class="reveal">Three machines. <span class="accent">Pick your trim.</span></h2>
+    <p class="lede reveal">Every package includes white-glove filing, error-checked submissions, and a real human pit crew. Choose how far you want to go.</p>
+
+    <div class="lineup-grid">
+      <div class="model reveal">
+        <div class="name">Tributo</div>
+        <div class="title">The Entry</div>
+        <div class="price"><span class="currency">$</span>497</div>
+        <div class="price-sub">One-time · or 4× $124 with Affirm</div>
+        <ul>
+          <li>LLC + EIN filing</li>
+          <li>USDOT number (24h expedite)</li>
+          <li>BOC-3 process agent</li>
+          <li>Compliance checklist by state</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#" class="pill ghost">Configure →</a>
+      </div>
+
+      <div class="model flagship reveal">
+        <div class="name">Spider</div>
+        <div class="title">The Operator</div>
+        <div class="price"><span class="currency">$</span>997</div>
+        <div class="price-sub">Most chosen · or 4× $249 with Affirm</div>
+        <ul>
+          <li>Everything in Tributo</li>
+          <li>MC Interstate Authority</li>
+          <li>UCR + IFTA registration</li>
+          <li>Insurance broker introductions</li>
+          <li>Freight Academy access</li>
+          <li>Dedicated compliance advisor</li>
+        </ul>
+        <a href="#" class="pill">Configure →</a>
+      </div>
+
+      <div class="model reveal">
+        <div class="name">SF90 Stradale</div>
+        <div class="title">The Fleet</div>
+        <div class="price"><span class="currency">$</span>2,497</div>
+        <div class="price-sub">For multi-truck builders</div>
+        <ul>
+          <li>Everything in Spider</li>
+          <li>Multi-truck DOT scaling</li>
+          <li>Drug & alcohol consortium setup</li>
+          <li>IRP plate registration</li>
+          <li>Custom broker packet + branding</li>
+          <li>Ongoing monthly compliance audit</li>
+        </ul>
+        <a href="#" class="pill ghost">Configure →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRIVERS -->
+<section class="block" id="drivers" style="background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container">
+    <div class="section-label reveal">The Drivers</div>
+    <h2 class="reveal">800 owner-operators. <span class="accent">One starting line.</span></h2>
+
+    <div class="drivers-grid">
+      <div class="driver reveal">
+        <div class="mark">"</div>
+        <p class="q">I tried filing on my own twice and got bounced both times. ForgeRosso had my MC live in 36 hours and my first broker packet on the same day.</p>
+        <div class="byline"><span class="name">Todd Marsh</span> · Marsh Freight LLC · Ohio</div>
+      </div>
+      <div class="driver reveal">
+        <div class="mark">"</div>
+        <p class="q">The compliance advisor caught two state errors before I hit submit. That's the kind of service I'd pay double for.</p>
+        <div class="byline"><span class="name">Anton Rios</span> · Rios Logistics · Texas</div>
+      </div>
+      <div class="driver reveal">
+        <div class="mark">"</div>
+        <p class="q">Felt like buying a Ferrari, not signing up for a government form. Worth every dollar.</p>
+        <div class="byline"><span class="name">Amos Bell</span> · Bell Hauling Co · Georgia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVE / LEAD FORM -->
+<section class="block reserve" id="reserve">
+  <div class="container">
+    <div class="section-label reveal">Reserve Your Build</div>
+    <h2 class="reveal">Six fields. <span class="accent">Then we're moving.</span></h2>
+    <p class="lede reveal">Tell us who you are. A Pit Crew advisor follows up inside 24 hours with your configuration, timeline, and the exact filings we'll run.</p>
+
+    <form class="lead-form reveal" action="https://formsubmit.co/ceo@bleubanc.com" method="POST">
+      <input type="hidden" name="_subject" value="🏁 New ForgeRosso lead" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="true" />
+      <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" />
+
+      <div class="form-grid">
+        <label>
+          <span>Full Name</span>
+          <input type="text" name="name" required placeholder="Marcus Chen" autocomplete="name" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="marcus@example.com" autocomplete="email" />
+        </label>
+        <label>
+          <span>Mobile</span>
+          <input type="tel" name="phone" required placeholder="713-555-0100" autocomplete="tel" />
+        </label>
+        <label>
+          <span>Base State</span>
+          <select name="state" required>
+            <option value="">Choose your home state…</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+            <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+            <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+            <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+            <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+            <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+            <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+            <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+            <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+            <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+            <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+            <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+            <option>WI</option><option>WY</option>
+          </select>
+        </label>
+        <label>
+          <span>Truck Status</span>
+          <select name="truck_status" required>
+            <option value="">Choose…</option>
+            <option>Already own — Class 8 sleeper</option>
+            <option>Already own — Box truck</option>
+            <option>Already own — Reefer</option>
+            <option>Buying within 30 days</option>
+            <option>Just researching</option>
+          </select>
+        </label>
+        <label>
+          <span>Configuration Interest</span>
+          <select name="tier" required>
+            <option value="">Choose your trim…</option>
+            <option>Tributo — $497 (intrastate entry)</option>
+            <option>Spider — $997 (interstate, most chosen)</option>
+            <option>SF90 Stradale — $2,497 (fleet)</option>
+            <option>Not sure — recommend for me</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="pill">Reserve My Build &nbsp;→</button>
+      </div>
+      <p class="legal">By submitting you authorize ForgeRosso to contact you about your authority configuration. No spam, no resale of your data. Reply STOP to opt out.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="container">
+    <h2 class="reveal" style="margin: 0 auto;">Your authority. <span class="accent">By tomorrow.</span></h2>
+    <p class="lede reveal" style="margin-left: auto; margin-right: auto; text-align: center;">Pick a model. Configure your build. We file. You drive.</p>
+    <div class="cta-row reveal">
+      <a href="#reserve" class="pill">Start Engine &nbsp;→</a>
+      <a href="#reserve" class="pill ghost">Talk to a Pit Crew</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-row">
+      <div class="foot-col">
+        <div class="brand">FORGE<span class="ross">ROSSO</span></div>
+        <p class="foot-brand">Trucking authority, engineered like a supercar. Built in Los Angeles for owner-operators in all 50 states.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#">About</a><a href="#">Contact</a><a href="#">Careers</a><a href="#">Press</a>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <a href="#">State Guides</a><a href="#">DOT Glossary</a><a href="#">Freight Academy</a><a href="#">Blog</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="#">Pricing</a><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Status</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ForgeRosso, LLC. All rights reserved.</span>
+      <span>MADE WITH ROSSO IN LOS ANGELES</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const navEl = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Configurator
+  const rate = document.getElementById('rate');
+  const miles = document.getElementById('miles');
+  const rateLbl = document.getElementById('rateLbl');
+  const milesLbl = document.getElementById('milesLbl');
+  const annual = document.getElementById('annual');
+  const needle = document.getElementById('needle');
+  const vehLbl = document.getElementById('vehLbl');
+  const vehSelect = document.getElementById('vehSelect');
+  let mult = 1.0;
+
+  const veh_names = { '0.7': 'Box Truck', '1.0': 'Class 8 Sleeper', '1.4': 'Reefer' };
+
+  function fmt(n) { return n.toLocaleString('en-US'); }
+  function recalc() {
+    const r = parseFloat(rate.value);
+    const m = parseInt(miles.value);
+    rateLbl.textContent = '$' + r.toFixed(2);
+    milesLbl.textContent = fmt(m);
+    const yearly = Math.round(r * m * 50 * mult);
+    annual.textContent = fmt(yearly);
+    // needle rotates -90 to +90 based on yearly between 50k and 600k
+    const pct = Math.min(1, Math.max(0, (yearly - 50000) / 550000));
+    const deg = -90 + pct * 180;
+    needle.style.transform = `translateX(-50%) rotate(${deg}deg)`;
+  }
+  rate.addEventListener('input', recalc);
+  miles.addEventListener('input', recalc);
+  vehSelect.addEventListener('click', (e) => {
+    const v = e.target.closest('.veh');
+    if (!v) return;
+    document.querySelectorAll('.veh').forEach(x => x.classList.remove('active'));
+    v.classList.add('active');
+    mult = parseFloat(v.dataset.mult);
+    vehLbl.textContent = veh_names[v.dataset.mult];
+    recalc();
+  });
+  recalc();
+</script>
+
+</body>
+</html>
